@@ -1,0 +1,56 @@
+[
+  {
+    "Category":"Classical ML",
+    "Model":"Scratch LinearRegression",
+    "Target":"Traffic Volume",
+    "RMSE":75.94,
+    "MAE":54.47,
+    "MAPE (%)":15.01,
+    "R2 Score":0.9296
+  },
+  {
+    "Category":"Classical ML",
+    "Model":"Ridge Regression",
+    "Target":"Traffic Volume",
+    "RMSE":75.32,
+    "MAE":53.98,
+    "MAPE (%)":14.75,
+    "R2 Score":0.9307
+  },
+  {
+    "Category":"Classical ML",
+    "Model":"DecisionTree",
+    "Target":"Traffic Volume",
+    "RMSE":65.35,
+    "MAE":44.0,
+    "MAPE (%)":10.23,
+    "R2 Score":0.9478
+  },
+  {
+    "Category":"Classical ML",
+    "Model":"RandomForest",
+    "Target":"Traffic Volume",
+    "RMSE":58.72,
+    "MAE":39.75,
+    "MAPE (%)":9.29,
+    "R2 Score":0.9579
+  },
+  {
+    "Category":"Classical ML",
+    "Model":"XGBoost",
+    "Target":"Traffic Volume",
+    "RMSE":57.74,
+    "MAE":39.54,
+    "MAPE (%)":9.35,
+    "R2 Score":0.9593
+  },
+  {
+    "Category":"Deep Learning (PyTorch)",
+    "Model":"FlowCast LSTM (from scratch)",
+    "Target":"Traffic Volume",
+    "RMSE":59.38,
+    "MAE":40.61,
+    "MAPE (%)":9.68,
+    "R2 Score":0.9569
+  }
+]

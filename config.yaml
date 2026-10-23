@@ -1,0 +1,56 @@
+# FlowCast Configuration File
+# Northline Corridor Traffic Prediction System
+
+project:
+  name: "FlowCast"
+  version: "1.0.0"
+  random_seed: 42
+  corridor: "Northline Corridor"
+  total_segments: 25
+
+paths:
+  raw_traffic: "data/raw/traffic_sensor_log.csv"
+  raw_weather: "data/raw/weather_observations.csv"
+  raw_calendar: "data/raw/calendar_events.csv"
+  interim_dir: "data/interim"
+  processed_data: "data/processed/flowcast_processed.parquet"
+  processed_csv: "data/processed/flowcast_processed.csv"
+  models_dir: "models"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+  benchmark_file: "models/benchmark_scoreboard.json"
+  model_cards: "models/model_cards.json"
+
+split:
+  train_end: "2025-03-31"  # Train: 2025-01-01 to 2025-03-31 (~60%)
+  val_end: "2025-04-30"    # Val:   2025-04-01 to 2025-04-30 (~20%)
+  test_end: "2025-05-31"   # Test:  2025-05-01 to 2025-05-31 (~20%)
+
+cleaning:
+  max_speed: 200.0
+  min_speed: 0.0
+  max_occupancy: 100.0
+  min_occupancy: 0.0
+  min_volume: 0
+
+targets:
+  regression_volume: "traffic_volume"
+  regression_travel_time: "travel_time"
+  classification_congestion: "congestion_level"
+  classification_accident: "accident_risk"
+
+congestion_levels:
+  - "Free-flow"
+  - "Moderate"
+  - "Heavy"
+  - "Severe"
+
+deep_learning:
+  sequence_length: 6     # 6 half-hour steps = 3 hours sequence history
+  batch_size: 128
+  epochs: 15
+  learning_rate: 0.001
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.2
+  device: "cuda"          # will fallback to cpu if not available

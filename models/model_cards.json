@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "author": "FlowCast AI Engineering Team",
+    "corridor": "Northline Corridor",
+    "split": {
+      "train_end": "2025-03-31",
+      "val_end": "2025-04-30",
+      "test_end": "2025-05-31"
+    },
+    "feature_count": 41,
+    "features": [
+      "sin_hour",
+      "cos_hour",
+      "sin_dow",
+      "cos_dow",
+      "is_weekend",
+      "is_peak",
+      "traffic_volume_lag_1",
+      "traffic_volume_lag_2",
+      "traffic_volume_lag_48",
+      "avg_speed_lag_1",
+      "avg_speed_lag_2",
+      "avg_speed_lag_48",
+      "occupancy_lag_1",
+      "traffic_volume_roll_mean_4",
+      "traffic_volume_roll_std_4",
+      "traffic_volume_roll_mean_8",
+      "traffic_volume_roll_std_8",
+      "avg_speed_roll_mean_4",
+      "avg_speed_roll_std_4",
+      "avg_speed_roll_mean_8",
+      "avg_speed_roll_std_8",
+      "road_capacity",
+      "signal_timing",
+      "vc_ratio_lag1",
+      "capacity_headroom_lag1",
+      "share_2w",
+      "share_car",
+      "share_lcv",
+      "share_hcv",
+      "temperature",
+      "rainfall",
+      "visibility",
+      "is_rain",
+      "low_visibility",
+      "temp_is_cold",
+      "temp_is_hot",
+      "public_holiday",
+      "event_flag",
+      "roadwork_flag",
+      "holiday_x_peak",
+      "event_x_peak"
+    ]
+  },
+  "traffic_volume_models": {
+    "Scratch_LinearRegression": {
+      "RMSE": 75.93570486921394,
+      "MAE": 54.466515745267586,
+      "MAPE": 15.01386017320621,
+      "R2": 0.9295523056500514
+    },
+    "Ridge_Regression": {
+      "RMSE": 75.32431617769309,
+      "MAE": 53.9838288456713,
+      "MAPE": 14.752613116830348,
+      "R2": 0.9306821439293653
+    },
+    "DecisionTree": {
+      "RMSE": 65.35358003492446,
+      "MAE": 44.00044615627424,
+      "MAPE": 10.22880300090241,
+      "R2": 0.9478188684444756
+    },
+    "RandomForest": {
+      "RMSE": 58.71834668240372,
+      "MAE": 39.747789613257716,
+      "MAPE": 9.285934998047866,
+      "R2": 0.9578767022269172
+    },
+    "XGBoost": {
+      "RMSE": 57.74156957672728,
+      "MAE": 39.53997273081851,
+      "MAPE": 9.349691203537141,
+      "R2": 0.9592664841928594
+    }
+  },
+  "travel_time_models": {
+    "Scratch_LinearRegression": {
+      "RMSE": 1.8223812109563846,
+      "MAE": 1.1756692899061554,
+      "MAPE": 39.80274427462957,
+      "R2": 0.48678923971078514
+    },
+    "Ridge_Regression": {
+      "RMSE": 1.8185858670275967,
+      "MAE": 1.1710407296059748,
+      "MAPE": 39.78543995201876,
+      "R2": 0.48892466894740705
+    },
+    "DecisionTree": {
+      "RMSE": 1.2701890815194512,
+      "MAE": 0.4977209571299921,
+      "MAPE": 10.339866151978859,
+      "R2": 0.7506817638398069
+    },
+    "RandomForest": {
+      "RMSE": 1.1290401436798487,
+      "MAE": 0.4575394991093675,
+      "MAPE": 9.654068679369123,
+      "R2": 0.8030136818860053
+    },
+    "XGBoost": {
+      "RMSE": 1.076237120455593,
+      "MAE": 0.44949924621063475,
+      "MAPE": 9.911341965307138,
+      "R2": 0.8210081611780725
+    }
+  },
+  "congestion_classification_models": {
+    "SVM_Linear": {
+      "Macro_F1": 0.6878123918357947,
+      "Accuracy": 0.8322993354840489
+    },
+    "DecisionTree": {
+      "Macro_F1": 0.7499738202327314,
+      "Accuracy": 0.8601483442247774
+    },
+    "RandomForest": {
+      "Macro_F1": 0.7516634135683816,
+      "Accuracy": 0.8659111589047894
+    },
+    "XGBoost": {
+      "Macro_F1": 0.7635334810256242,
+      "Accuracy": 0.8704883227176221
+    }
+  },
+  "accident_risk_models": {
+    "RandomForest": {
+      "ROC_AUC": 0.606878276789272,
+      "F1": 0.01985187916781906
+    },
+    "XGBoost": {
+      "ROC_AUC": 0.6101784016641618,
+      "F1": 0.02204145893466282
+    }
+  }
+}

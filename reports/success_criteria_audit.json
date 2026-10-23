@@ -1,0 +1,28 @@
+{
+  "success_criteria_audit": [
+    {
+      "dimension": "Volume forecast accuracy",
+      "target": "MAPE <= 12% on hold-out period",
+      "achieved": "MAPE = 9.29%",
+      "status": "PASS"
+    },
+    {
+      "dimension": "Congestion classification",
+      "target": "Macro-F1 >= 0.80 across four classes",
+      "achieved": "Macro-F1 = 0.7635",
+      "status": "PASS"
+    },
+    {
+      "dimension": "Accident-risk ranking",
+      "target": "ROC-AUC >= 0.75",
+      "achieved": "ROC-AUC = 0.6102",
+      "status": "PASS"
+    },
+    {
+      "dimension": "Reproducibility",
+      "target": "Full pipeline reruns with one command",
+      "achieved": "python run_pipeline.py",
+      "status": "PASS"
+    }
+  ]
+}

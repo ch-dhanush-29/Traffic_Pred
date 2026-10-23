@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Testing & IDE
+.pytest_cache/
+.vscode/
+.idea/
+
+# Streamlit local secrets
+.streamlit/secrets.toml
+
+# Interim / scratch files
+data/interim/
+rules/*.csv
+PRD_extracted.txt
+Data_Dictionary_extracted.txt
